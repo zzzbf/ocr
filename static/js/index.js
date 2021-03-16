@@ -14,10 +14,10 @@ function uploadImage(input) {
                     content = content + "<h5>" + v['text'] + "</h5>";
                 });
                 $("#ocr-result").html(content);
+                $('#imageResult').attr("src", data['base64'])
             }
         });
 
-        readURL(input);
     }
 }
 

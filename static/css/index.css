@@ -23,7 +23,7 @@
 }
 
 .image-area::before {
-    content: 'Uploaded image result';
+    content: '';
     color: #fff;
     font-weight: bold;
     text-transform: uppercase;
