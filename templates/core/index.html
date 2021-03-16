@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6 py-5">
+            <header class="text-white text-center">
+                <h1 class="display-4">上传图片</h1>
+                <!--p class="lead mb-0">Build a simple image upload button using Bootstrap 4.</p>
+                <p class="mb-5 font-weight-light">Snippet by
+                    <a href="https://bootstrapious.com" class="text-white">
+                        <u>Bootstrapious</u>
+                    </a>
+                </p>
+                <img src="https://res.cloudinary.com/mhmd/image/upload/v1564991372/image_pxlho1.svg" alt="" width="150"
+                     class="mb-4"-->
+            </header>
+
+
+            <div class="row py-4">
+                <div class="col-lg-6 mx-auto">
+
+                    <!-- Upload image input-->
+                    <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+                        <input id="upload" type="file" onchange="uploadImage(this);" class="form-control border-0">
+                        <label id="upload-label" for="upload" class="font-weight-light text-muted">选择图片</label>
+                        <div class="input-group-append">
+                            <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i
+                                    class="fa fa-cloud-upload mr-2 text-muted"></i><small
+                                    class="text-uppercase font-weight-bold text-muted">选择图片</small></label>
+                        </div>
+                    </div>
+
+                    <div class="image-area mt-4"><img id="imageResult" src="#" alt=""
+                                                      class="img-fluid rounded shadow-sm mx-auto d-block"></div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 py-5">
+            <header class="text-white text-center">
+                <h1 class="display-4">OCR识别结果</h1>
+
+            </header>
+
+
+            <!--div class="form-group" style="padding:12px;">
+                <textarea id="ocr-result" class="form-control animated" placeholder="运行结果"></textarea>
+
+            </div-->
+            <div id="ocr-result" class="text-white text-left"
+                 style="width:80%; margin-left:15%;margin-top:10%;border:2px dashed rgba(255, 255, 255, 0.7);padding: 1rem;
+    position: relative;"></div>
+
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script>
+    $(function () {
+        $('.normal').autosize();
+        $('.animated').autosize({append: "\n"});
+    });
+</script>
+</body>
+</html>
