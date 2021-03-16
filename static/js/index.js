@@ -8,13 +8,20 @@ function uploadImage(input) {
             data: data,
             processData: false,
             contentType: false,
+            beforeSend:function (xhr, opts){
+                $("#image-area").append("<div id='progress' class='text-white text-center'>\n" +
+                    "  <span class=\"spinner-grow spinner-grow-sm\"></span>\n" +
+                    "  文字识别中...\n" +
+                    "</div>");
+            },
             success: function (data) {
                 let content = "";
                 $.each(data['result'], function (k, v) {
                     content = content + "<h5>" + v['text'] + "</h5>";
                 });
                 $("#ocr-result").html(content);
-                $('#imageResult').attr("src", data['base64'])
+                $('#imageResult').attr("src", data['base64']);
+                $("#progress").remove();
             }
         });
 
